@@ -225,3 +225,36 @@ left join goal_reached on goal.id=goal_reached.goal_id
 left join game on game.id=goal_reached.game_id;
 
 <img width="459" alt="Screenshot 2024-09-11 at 9 20 37 PM" src="https://github.com/user-attachments/assets/cfa5774d-bb1b-4d01-a20a-8c460efbbd2c">
+
+
+
+Exercise 5: Subqueries
+
+Question 1:
+
+
+select name 
+from country
+where iso_country in
+(select iso_country from airport
+where name like"%Satsuma%");
+
+<img width="831" alt="Screenshot 2024-09-25 at 11 09 57 PM" src="https://github.com/user-attachments/assets/bae0090f-b09c-42d0-9350-57cce7b8d6b4">
+
+
+Question 2:
+
+select name
+from airport
+where iso_country in
+(select iso_country from country
+where name="Monaco");
+
+<img width="833" alt="Screenshot 2024-09-25 at 11 11 59 PM" src="https://github.com/user-attachments/assets/6f8e3541-0adb-48be-b0f8-190ff8155d2d">
+
+
+Question 3:
+
+
+
+
