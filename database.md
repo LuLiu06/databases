@@ -331,3 +331,95 @@ group by screen_name;
 
 <img width="363" alt="Screenshot 2024-09-26 at 12 01 59 PM" src="https://github.com/user-attachments/assets/8e22291c-244d-4d13-aee2-c5c6ab8e3442">
 
+
+Question 4:
+
+select screen_name
+from game
+where co2_consumed in (
+    select min(co2_consumed)
+    from game
+    );
+
+
+<img width="341" alt="Screenshot 2024-09-26 at 4 04 25 PM" src="https://github.com/user-attachments/assets/76af9678-b6f8-43e7-9042-84591b85828b">
+
+
+Question 5:
+
+select country.name,count(*)
+from country,airport
+where airport.iso_country=country.iso_country
+group by country.iso_country
+order by count(*)desc
+limit 50;
+
+
+<img width="417" alt="Screenshot 2024-09-26 at 4 18 07 PM" src="https://github.com/user-attachments/assets/589f1214-4611-4b56-b3d5-640f23542eac">
+
+
+Question 6:
+
+select country.name
+from country,airport
+where country.iso_country=airport.iso_country
+group by country.iso_country
+having count(*)>1000;
+
+
+<img width="390" alt="Screenshot 2024-09-26 at 4 31 34 PM" src="https://github.com/user-attachments/assets/43bf1960-b09c-4215-9678-ccdb9470f0b4">
+
+
+Question 7:
+
+select airport.name
+from airport
+where elevation_ft in(
+    select max(elevation_ft)
+    from airport
+    );
+
+
+<img width="322" alt="Screenshot 2024-09-26 at 4 36 55 PM" src="https://github.com/user-attachments/assets/5f1d215c-3c3f-47db-9a3b-e91b94d49147">
+
+
+Question 8:
+
+select country.name
+from country
+where iso_country in(
+    select iso_country
+    from airport
+    where elevation_ft in(
+        select max(elevation_ft)
+        from airport
+        )
+    );
+
+
+<img width="337" alt="Screenshot 2024-09-26 at 4 50 50 PM" src="https://github.com/user-attachments/assets/28229209-5d5d-4c77-b40a-9ef8a4b2bc22">
+
+
+Question 9:
+
+select count(*)
+from game,goal_reached
+where game.id=goal_reached.game_id
+and screen_name="Vesa"
+group by screen_name;
+
+
+<img width="321" alt="Screenshot 2024-09-26 at 5 01 04 PM" src="https://github.com/user-attachments/assets/1e8a8ddb-d5de-491c-8c7d-51ba21b10ebf">
+
+
+Question 10:
+
+select name
+from airport
+where latitude_deg in(
+    select min(latitude_deg)
+    from airport
+    );
+    
+
+<img width="274" alt="Screenshot 2024-09-26 at 5 05 52 PM" src="https://github.com/user-attachments/assets/4aee69ef-7ab3-4ddd-a194-382a6ad0b5da">
