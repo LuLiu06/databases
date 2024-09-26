@@ -302,3 +302,32 @@ where id not in(
 
 
 
+Exercise 6: Aggregate Queries
+
+Question 1:
+
+select max(elevation_ft)
+from airport;
+
+<img width="357" alt="Screenshot 2024-09-26 at 11 43 06 AM" src="https://github.com/user-attachments/assets/40955a02-f7ab-4edb-99ba-82ee12649e13">
+
+
+Question 2:
+
+select continent,count(*)
+from country
+group by continent;
+
+
+<img width="373" alt="Screenshot 2024-09-26 at 11 45 28 AM" src="https://github.com/user-attachments/assets/982ad2c0-b4ea-4a28-926f-1dd5393fb6b3">
+
+Question 3:
+
+select screen_name,count(*)
+from game,goal_reached,goal
+where game.id=game_id and goal_id=goal.id
+group by screen_name;
+
+
+<img width="363" alt="Screenshot 2024-09-26 at 12 01 59 PM" src="https://github.com/user-attachments/assets/8e22291c-244d-4d13-aee2-c5c6ab8e3442">
+
