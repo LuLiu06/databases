@@ -302,6 +302,12 @@ where id not in(
 
 
 
+
+
+
+
+
+
 Exercise 6: Aggregate Queries
 
 Question 1:
