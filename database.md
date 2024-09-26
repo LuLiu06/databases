@@ -255,6 +255,50 @@ where name="Monaco");
 
 Question 3:
 
+select screen_name
+from game
+where id in (
+    select game_id
+    from goal_reached
+    where goal_id in (
+        select id
+        from goal
+        where name="clouds"
+        )
+    );
+
+<img width="356" alt="Screenshot 2024-09-26 at 10 19 19 AM" src="https://github.com/user-attachments/assets/54e748b7-f304-42e3-87be-4312997d1ca3">
+
+
+Question 4:
+
+select name
+from country
+where iso_country not in (
+    select iso_country
+    from airport
+    );
+
+
+<img width="298" alt="Screenshot 2024-09-26 at 10 24 56 AM" src="https://github.com/user-attachments/assets/33de3d88-e6c9-4684-8af6-343cc6698a23">
+
+
+Question 5:
+
+select goal.name
+from goal
+where id not in(
+    select goal_id
+    from goal_reached
+    where game_id in(
+        select id
+        from game
+        where screen_name="Heini"
+        )
+    );
+
+
+<img width="395" alt="Screenshot 2024-09-26 at 11 22 56 AM" src="https://github.com/user-attachments/assets/2d5ee17e-ce96-4288-8ede-2e831ae72519">
 
 
 
