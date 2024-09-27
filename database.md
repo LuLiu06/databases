@@ -429,3 +429,38 @@ where latitude_deg in(
     
 
 <img width="274" alt="Screenshot 2024-09-26 at 5 05 52 PM" src="https://github.com/user-attachments/assets/4aee69ef-7ab3-4ddd-a194-382a6ad0b5da">
+
+
+
+Exercise 7: Update Queries
+
+Question 1:
+
+
+update game
+set location=(select airport.ident
+              from airport
+              where name="Nottingham Airport"),
+              co2_consumed=co2_consumed+500
+where screen_name="Vesa";
+
+select * from game;
+
+<img width="433" alt="Screenshot 2024-09-27 at 4 39 47 PM" src="https://github.com/user-attachments/assets/4ee31d44-0d4c-4700-b1e8-581cf79a4f4e">
+
+
+Question 3:
+
+delete from goal_reached;
+select * from goal_reached;
+
+<img width="544" alt="Screenshot 2024-09-27 at 4 45 41 PM" src="https://github.com/user-attachments/assets/bc7736d7-6e68-4277-a9ac-16a38124c2fb">
+
+
+Question 4:
+
+delete from game;
+select * from game;
+
+<img width="438" alt="Screenshot 2024-09-27 at 4 47 02 PM" src="https://github.com/user-attachments/assets/4d177af4-59b4-400d-8dcb-cf78094a820e">
+
