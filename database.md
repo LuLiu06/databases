@@ -464,3 +464,15 @@ select * from game;
 
 <img width="438" alt="Screenshot 2024-09-27 at 4 47 02 PM" src="https://github.com/user-attachments/assets/4d177af4-59b4-400d-8dcb-cf78094a820e">
 
+Exercise 8: Database Design
+
+Question1: ident
+Question2: airport
+Question3: b.Each country can have multiple airports.
+Question4:True
+Question5:False
+Question6:c.The airport table will have a foreign key that references the country table.
+Question7: b.The game table will have a foreign key that references the airport table.
+Question8: True
+Question 9: a. The relationship diamond will have its own table.
+Question10:a. Two foreign keys:One referencing the game table and another referencing the goal table.
